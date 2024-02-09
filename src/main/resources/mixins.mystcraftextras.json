@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8.5-GTNH",
+  "package": "de.pilz.mystcraftextras.mixins",
+  "refmap": "mixins.mystcraftextras.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinLinkingAPIDelegate"
+  ],
+  "client": [],
+  "server": []
+}
