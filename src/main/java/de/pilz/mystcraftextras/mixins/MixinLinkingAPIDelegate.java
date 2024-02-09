@@ -8,8 +8,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import com.xcompwiz.mystcraft.api.hook.LinkPropertyAPI;
 import com.xcompwiz.mystcraft.api.impl.linking.LinkingAPIDelegate;
 import com.xcompwiz.mystcraft.api.linking.ILinkInfo;
+
+import de.pilz.mystcraftextras.configuration.TweaksConfig;
 
 @Mixin(LinkingAPIDelegate.class)
 public class MixinLinkingAPIDelegate {
@@ -20,5 +23,12 @@ public class MixinLinkingAPIDelegate {
         cancellable = true,
         remap = false)
     public void createLinkInfoFromPosition$mystcraftextra$applyIntraLinking(World World, Entity entity,
-        CallbackInfoReturnable<ILinkInfo> callback) {}
+        CallbackInfoReturnable<ILinkInfo> callback) {
+        if (TweaksConfig.enableIntraLinkingByDefault) {
+            ILinkInfo link = callback.getReturnValue();
+            if (link != null) {
+                link.setFlag(LinkPropertyAPI.FLAG_INTRA_LINKING, true);
+            }
+        }
+    }
 }

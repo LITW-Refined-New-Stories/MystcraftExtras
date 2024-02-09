@@ -4,13 +4,14 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import de.pilz.mystcraftextras.configuration.ConfigManager;
 
 public class CommonProxy {
 
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
-        Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
+        ConfigManager.registerConfigs();
 
         MystcraftExtras.LOG.info(Config.greeting);
         MystcraftExtras.LOG.info("I am " + MystcraftExtras.MODNAME + " at version " + Tags.VERSION);
