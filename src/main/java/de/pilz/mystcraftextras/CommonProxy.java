@@ -13,7 +13,6 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
         ConfigManager.registerConfigs();
 
-        MystcraftExtras.LOG.info(Config.greeting);
         MystcraftExtras.LOG.info("I am " + MystcraftExtras.MODNAME + " at version " + Tags.VERSION);
     }
 
