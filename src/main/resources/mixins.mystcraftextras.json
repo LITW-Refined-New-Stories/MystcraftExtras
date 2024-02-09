@@ -5,9 +5,7 @@
   "refmap": "mixins.mystcraftextras.refmap.json",
   "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [
-    "MixinLinkingAPIDelegate"
-  ],
+  "mixins": [],
   "client": [],
   "server": []
 }

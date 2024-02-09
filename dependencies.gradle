@@ -36,4 +36,5 @@
 dependencies {
     api(project.files("libs/mystcraft-dev.jar"))
     api("com.github.GTNewHorizons:GTNHLib:0.2.3:dev")
+    implementation("com.github.GTNewHorizons:TinkersConstruct:1.11.11-GTNH:dev")
 }
